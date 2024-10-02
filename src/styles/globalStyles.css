@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --color-brand-1: #364fc7;
+  --grey-1: #1d1d1d;
+  --grey-2: #383b3d;
+  --grey-3: #adb5bd;
+  --grey-4: #e9ecef;
+  --grey-5: #797979;
+  --grey-6: #e9ecef;
+  --mode: #ffffff;
+  --font-family1: "Arial, sans-serif";
+  --font-family2: "Inter", sans-serif;
+  --font-family3: "Barlow", sans-serif;
+  --font-family4: "Oswald", sans-serif;
+  --font-weight: 300;
+  --font-weight1: 400;
+  --font-weight2: 500;
+  --font-weight3: 700;
+  --font-weight4: 900;
+  --font-optical-sizing: auto;
+  --primary-bg: linear-gradient(var(--primary), var(--primary));
+  --bg: hsl(0, 0%, 19%);
+}
+
+[data-gradient="true"] {
+  --primary-bg: conic-gradient(
+    from var(--angle, 180deg) at 50% 70%,
+    hsla(0, 0%, 98%, 1) 0deg,
+    #eec32d 72.0000010728836deg,
+    #ec4b4b 144.0000021457672deg,
+    #709ab9 216.00000858306885deg,
+    #4dffbf 288.0000042915344deg,
+    hsla(0, 0%, 98%, 1) 1turn
+  );
+}
+
+body {
+  background-color: var(--mode);
+}
+
+body::before {
+  --size: 120px;
+  --line: hsl(0 0% 100% / 0.13);
+  --thickness: 2px;
+  --offset: 60px;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+        transparent 0 calc(var(--size) - var(--thickness)),
+        var(--line) calc(var(--size) - var(--thickness)) var(--size)
+      )
+      var(--offset) var(--offset) / var(--size) var(--size),
+    linear-gradient(
+        90deg,
+        transparent 0 calc(var(--size) - var(--thickness)),
+        var(--line) calc(var(--size) - var(--thickness)) var(--size)
+      )
+      var(--offset) var(--offset) / var(--size) var(--size);
+}
