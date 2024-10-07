@@ -1,5 +1,3 @@
-// src/components/Main/styles.module.scss
-
 .mainContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,6 +5,7 @@
   max-width: 100vw;
   font-family: var(--font-family1);
   z-index: 0;
+  container: main / inline-size;
 
   .videoContainer {
     background-color: black;
@@ -27,26 +26,15 @@
     justify-content: center;
     padding: 2rem;
     font-family: var(--font-family4);
+    z-index: 10;
 
     .textBox {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
 
-      .animatedText {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.8s forwards;
-
-        @for $i from 1 through 4 {
-          &:nth-child(#{$i}) {
-            animation-delay: #{$i * 0.2}s;
-          }
-        }
-      }
-
       h2 {
-        font-size: 2.8rem;
+        font-size: clamp(1.8rem, 1.743rem + 1.174vw, 2.8rem);
         font-weight: 500;
         color: rgb(255, 94, 0);
       }
@@ -56,7 +44,7 @@
         flex-direction: column;
 
         span {
-          font-size: 4rem;
+          font-size: clamp(2rem, 2.018rem + 2.202vw, 4rem);
           font-weight: 700;
           color: white;
         }
@@ -112,28 +100,11 @@
         &:hover::after {
           transition-delay: 0.2s;
         }
-
-        span {
-          position: relative;
-          z-index: 1;
-        }
       }
     }
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Responsividade
 @media (max-width: 768px) {
   .mainContainer {
     grid-template-columns: 1fr;
@@ -155,11 +126,9 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      height: 100svh;
 
       .textBox {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         h2 {
           font-size: 2rem;
         }

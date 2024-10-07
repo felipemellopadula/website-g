@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
+import { QuemSomos } from "./components/QuemSomos";
 import "./styles/index.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Header />
       <Main />
+      <QuemSomos />
     </>
   );
 }
